@@ -2,7 +2,7 @@ import React from "react";
 import { Router } from "react-router-dom";
 
 import { FilmProvider } from "./Context/FilmsContext";
-import Routes from "./routes";
+import Routes from "./routes/routes";
 import history from "./Services/history";
 
 import GlobalStyle from "./styles/global";

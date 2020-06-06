@@ -1,8 +1,11 @@
 import { createGlobalStyle } from "styled-components";
 
 export const theme = {
-  primary: "#f05a28",
-  secondary: "#31cbff",
+  background: "#0f0f0f",
+  gray: "#333",
+  white: "#fff",
+  primary: "#328ffb",
+  secondary: "#f1af12",
 };
 
 export default createGlobalStyle`
@@ -23,6 +26,9 @@ body,
 #root {
   width: 100%;
   height: 100%;
+  background: ${theme.background};
+  color: ${theme.white};
+  
 }
 
 body {
