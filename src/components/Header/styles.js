@@ -14,17 +14,23 @@ export const Container = styled.div`
   }
 
   nav {
-    span {
+    a {
       font-size: 0.9rem;
+      font-weight: 700;
       margin-left: 0.5rem;
+      color: ${theme.white};
+
+      &:hover {
+        color: ${theme.secondary};
+      }
     }
   }
 
   @media (min-width: 620px) {
-    padding: 1.5rem 4.25rem;
+    padding: 1.5rem 3rem;
 
     nav {
-      span {
+      a {
         margin-left: 1.2rem;
       }
     }

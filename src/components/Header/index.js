@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import { Container } from "./styles";
 
@@ -8,9 +9,9 @@ export default function index() {
       <h1>DEVFLIX</h1>
 
       <nav>
-        <span>Início</span>
-        <span>Filmes</span>
-        <span>Séries</span>
+        <Link to="/">Início</Link>
+        <Link to="/films">Filmes</Link>
+        <Link to="/series">Séries</Link>
       </nav>
     </Container>
   );

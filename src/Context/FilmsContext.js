@@ -13,6 +13,14 @@ function FilmProvider({ children }) {
         `${process.env.REACT_APP_MOVIES_URL}/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&language=pt-Br&page=1`
       );
 
+      response.data.results.map((film) => {
+        film.poster_url = `${process.env.REACT_APP_IMAGES_URL}${film.poster_path}`;
+
+        return {
+          ...film,
+        };
+      });
+
       setFilmsData(response.data);
     }
 
