@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { Context } from "../../Context/FilmsContext";
 
-import { Container, Row, RowInner, Film } from "./styles";
+import { Container, Row, RowInner, Film, FilmInfo } from "./styles";
 
 function FilmPreview() {
   const { filmsData } = useContext(Context);
@@ -25,6 +25,9 @@ function FilmPreview() {
               <Link to={`/${film.id}`}>
                 <img src={film.poster_url} alt="poster" />
               </Link>
+              <FilmInfo>
+                <span>{film.title}</span>
+              </FilmInfo>
             </Film>
           ))}
         </RowInner>

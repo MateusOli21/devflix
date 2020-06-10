@@ -44,18 +44,20 @@ export const Row = styled.div`
 
 export const Film = styled.div`
   position: relative;
-  display: block;
+  display: inline-block;
   flex: 1 1 0px;
   transition: transform 500ms;
   margin-right: 0.75rem;
 
   img {
+    border-radius: 5px;
     max-width: 220px;
   }
 
   ${Row} &:hover {
-    transform: scale(1.15);
+    transform: scale(1.1);
     z-index: 1;
+    opacity: 1;
   }
 
   &:hover ~ & {
@@ -71,21 +73,28 @@ export const RowInner = styled.div`
 `;
 
 export const FilmInfo = styled.div`
-  width: 100%;
-  padding: 0.8rem 0.8rem;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  border: 1px solid red;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  opacity: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  transition: 500ms opacity;
 
-  h3 {
-    font-size: 1rem;
-    margin: 0.5rem 0;
+  ${Film}:hover & {
+    opacity: 1;
   }
 
   span {
-    margin: 2px 0;
+    position: absolute;
+    bottom: 0;
+    padding: 1rem;
+    width: 70%;
     font-size: 0.85rem;
-    max-width: 70%;
   }
 `;
