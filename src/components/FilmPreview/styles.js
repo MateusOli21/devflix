@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
-  margin: 2rem 0 6rem;
+  margin: 2rem 0 4rem;
 
   h1 {
     font-size: 1.25rem;
@@ -51,7 +51,7 @@ export const Film = styled.div`
 
   img {
     border-radius: 5px;
-    max-width: 220px;
+    max-width: 180px;
   }
 
   ${Row} &:hover {
@@ -61,7 +61,13 @@ export const Film = styled.div`
   }
 
   &:hover ~ & {
-    transform: translateX(10%);
+    transform: translateX(6%);
+  }
+
+  @media (min-width: 620px) {
+    img {
+      max-width: 220px;
+    }
   }
 `;
 

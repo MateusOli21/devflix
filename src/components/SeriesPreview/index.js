@@ -26,7 +26,7 @@ function SeriesPreview() {
                 <img src={serie.poster_url} alt="poster" />
               </Link>
               <SerieInfo>
-                <span>{serie.title}</span>
+                <span>{serie.original_name}</span>
               </SerieInfo>
             </Serie>
           ))}

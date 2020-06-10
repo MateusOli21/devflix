@@ -51,7 +51,7 @@ export const Serie = styled.div`
 
   img {
     border-radius: 5px;
-    max-width: 220px;
+    max-width: 180px;
   }
 
   ${Row} &:hover {
@@ -61,7 +61,13 @@ export const Serie = styled.div`
   }
 
   &:hover ~ & {
-    transform: translateX(10%);
+    transform: translateX(6%);
+  }
+
+  @media (min-width: 620px) {
+    img {
+      max-width: 220px;
+    }
   }
 `;
 
