@@ -22,12 +22,12 @@ function FilmPreview() {
         <RowInner>
           {films.map((film) => (
             <Film key={film.id}>
-              <Link to={`/${film.id}`}>
-                <img src={film.poster_url} alt="poster" />
+              <img src={film.poster_url} alt="poster" />
+              <Link to={`/film/${film.id}`}>
+                <FilmInfo>
+                  <span>{film.title}</span>
+                </FilmInfo>
               </Link>
-              <FilmInfo>
-                <span>{film.title}</span>
-              </FilmInfo>
             </Film>
           ))}
         </RowInner>

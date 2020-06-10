@@ -22,12 +22,12 @@ function SeriesPreview() {
         <RowInner>
           {series.map((serie) => (
             <Serie key={serie.id}>
-              <Link to={`/${serie.id}`}>
-                <img src={serie.poster_url} alt="poster" />
+              <img src={serie.poster_url} alt="poster" />
+              <Link to={`/serie/${serie.id}`}>
+                <SerieInfo>
+                  <span>{serie.original_name}</span>
+                </SerieInfo>
               </Link>
-              <SerieInfo>
-                <span>{serie.original_name}</span>
-              </SerieInfo>
             </Serie>
           ))}
         </RowInner>

@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { theme } from "../../styles/global";
+
 export const Container = styled.div`
   width: 100%;
   margin: 0rem 0 4rem;
@@ -102,5 +104,6 @@ export const SerieInfo = styled.div`
     padding: 1rem;
     width: 70%;
     font-size: 0.85rem;
+    color: ${theme.white};
   }
 `;
