@@ -5,7 +5,6 @@ export const theme = {
   backgroundOpt: "#191919",
   gray: "#333",
   white: "#fff",
-  primary: "#328ffb",
   secondary: "#f1af12",
 };
 
