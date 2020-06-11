@@ -47,7 +47,7 @@ function Recommendatios({ filmId, tvId }) {
           {recommendations.map((film) => (
             <Recommendation key={film.id}>
               <img src={film.poster_url} alt="poster" />
-              <Link to={`/film/${film.id}`}>
+              <Link to={`/${filmId ? "films" : "series"}/${film.id}`}>
                 <RecommendationInfo>
                   <span>{film.title}</span>
                 </RecommendationInfo>

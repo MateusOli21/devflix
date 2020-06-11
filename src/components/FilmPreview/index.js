@@ -23,7 +23,7 @@ function FilmPreview() {
           {films.map((film) => (
             <Film key={film.id}>
               <img src={film.poster_url} alt="poster" />
-              <Link to={`/film/${film.id}`}>
+              <Link to={`/films/${film.id}`}>
                 <FilmInfo>
                   <span>{film.title}</span>
                 </FilmInfo>
