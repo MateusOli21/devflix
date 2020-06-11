@@ -7,6 +7,7 @@ const Context = createContext();
 function FilmProvider({ children }) {
   const [filmsData, setFilmsData] = useState([]);
   const [seriesData, setSeriesData] = useState([]);
+  const [trendingData, setTrendingData] = useState([]);
 
   useEffect(() => {
     async function getFilms() {
@@ -23,7 +24,7 @@ function FilmProvider({ children }) {
         };
       });
 
-      setFilmsData(response.data);
+      setFilmsData(response.data.results);
     }
 
     getFilms();
@@ -32,7 +33,7 @@ function FilmProvider({ children }) {
   useEffect(() => {
     async function getSeries() {
       const response = await api.get(
-        `https://api.themoviedb.org/3/tv/popular?api_key=${process.env.REACT_APP_API_KEY}&language=pt-BR&page=1`
+        `${process.env.REACT_APP_MOVIES_URL}/tv/popular?api_key=${process.env.REACT_APP_API_KEY}&language=pt-BR&page=1`
       );
 
       response.data.results.map((serie) => {
@@ -44,14 +45,41 @@ function FilmProvider({ children }) {
         };
       });
 
-      setSeriesData(response.data);
+      setSeriesData(response.data.results);
     }
 
     getSeries();
   }, []);
 
+  useEffect(() => {
+    async function getTrending() {
+      const response = await api.get(
+        `${process.env.REACT_APP_MOVIES_URL}/trending/all/week?api_key=${process.env.REACT_APP_API_KEY}`
+      );
+
+      response.data.results.map((film) => {
+        film.poster_url = `${process.env.REACT_APP_IMAGES_URL}${film.poster_path}`;
+        film.backdrop_url = `${process.env.REACT_APP_IMAGES_URL}${film.backdrop_path}`;
+
+        return {
+          ...film,
+        };
+      });
+
+      setTrendingData(response.data.results);
+    }
+
+    getTrending();
+  }, []);
+
   return (
-    <Context.Provider value={{ filmsData: filmsData, seriesData: seriesData }}>
+    <Context.Provider
+      value={{
+        films: filmsData,
+        series: seriesData,
+        trendings: trendingData,
+      }}
+    >
       {children}
     </Context.Provider>
   );

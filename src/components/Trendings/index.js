@@ -5,23 +5,23 @@ import { Context } from "../../Context/FilmsContext";
 
 import { Container, Row, RowInner, Film, FilmInfo } from "./styles";
 
-function FilmPreview() {
-  const { films } = useContext(Context);
-
-  while (!films) {
-    return <h1>Loading...</h1>;
-  }
+function Trendings() {
+  const { trendings } = useContext(Context);
 
   return (
     <Container>
-      <h1>Filmes</h1>
+      <h1>Populares</h1>
 
       <Row>
         <RowInner>
-          {films.map((film) => (
+          {trendings.map((film) => (
             <Film key={film.id}>
               <img src={film.poster_url} alt="poster" />
-              <Link to={`/films/${film.id}`}>
+              <Link
+                to={`/${film.media_type === "movie" ? "films" : "series"}/${
+                  film.id
+                }`}
+              >
                 <FilmInfo>
                   <span>{film.title}</span>
                 </FilmInfo>
@@ -34,4 +34,4 @@ function FilmPreview() {
   );
 }
 
-export default FilmPreview;
+export default Trendings;

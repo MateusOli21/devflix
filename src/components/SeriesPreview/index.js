@@ -6,9 +6,7 @@ import { Context } from "../../Context/FilmsContext";
 import { Container, Row, RowInner, Serie, SerieInfo } from "./styles";
 
 function SeriesPreview() {
-  const { seriesData } = useContext(Context);
-
-  const series = seriesData.results;
+  const { series } = useContext(Context);
 
   while (!series) {
     return <h1>Loading...</h1>;
