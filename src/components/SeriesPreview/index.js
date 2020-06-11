@@ -23,7 +23,7 @@ function SeriesPreview() {
           {series.map((serie) => (
             <Serie key={serie.id}>
               <img src={serie.poster_url} alt="poster" />
-              <Link to={`/serie/${serie.id}`}>
+              <Link to={`/series/${serie.id}`}>
                 <SerieInfo>
                   <span>{serie.original_name}</span>
                 </SerieInfo>

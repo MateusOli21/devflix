@@ -7,6 +7,7 @@ import Dashboard from "../pages/Dashboard";
 import Films from "../pages/Films";
 import Film from "../pages/Film";
 import Series from "../pages/Series";
+import Serie from "../pages/Serie";
 
 export default function Routes() {
   return (
@@ -15,6 +16,7 @@ export default function Routes() {
       <Route exact path="/films" component={Films} />
       <Route exact path="/film/:filmId" component={Film} />
       <Route exact path="/series" component={Series} />
+      <Route exact path="/series/:serieId" component={Serie} />
     </Switch>
   );
 }
