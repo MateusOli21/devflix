@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { FiMoreHorizontal } from "react-icons/fi";
 
 import { Context } from "../../Context/FilmsContext";
 
@@ -14,16 +15,19 @@ function Trendings() {
 
       <Row>
         <RowInner>
-          {trendings.map((film) => (
-            <Film key={film.id}>
-              <img src={film.poster_url} alt="poster" />
+          {trendings.map((trending) => (
+            <Film key={trending.id}>
+              <img src={trending.poster_url} alt="poster" />
               <Link
-                to={`/${film.media_type === "movie" ? "films" : "series"}/${
-                  film.id
+                to={`/${trending.media_type === "movie" ? "films" : "series"}/${
+                  trending.id
                 }`}
               >
                 <FilmInfo>
-                  <span>{film.title}</span>
+                  <button>{trending.vote_average.toFixed(1)}</button>
+                  <span>
+                    <FiMoreHorizontal size={24} />
+                  </span>
                 </FilmInfo>
               </Link>
             </Film>

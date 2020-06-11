@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { FiMoreHorizontal } from "react-icons/fi";
 
 import { Context } from "../../Context/FilmsContext";
 
@@ -23,7 +24,10 @@ function SeriesPreview() {
               <img src={serie.poster_url} alt="poster" />
               <Link to={`/series/${serie.id}`}>
                 <SerieInfo>
-                  <span>{serie.original_name}</span>
+                  <button>{serie.vote_average.toFixed(1)}</button>
+                  <span>
+                    <FiMoreHorizontal size={24} />
+                  </span>
                 </SerieInfo>
               </Link>
             </Serie>

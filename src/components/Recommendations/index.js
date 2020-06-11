@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { FiMoreHorizontal } from "react-icons/fi";
 
 import api from "../../Services/api";
 
@@ -44,12 +45,15 @@ function Recommendatios({ filmId, tvId }) {
 
       <Row>
         <RowInner>
-          {recommendations.map((film) => (
-            <Recommendation key={film.id}>
-              <img src={film.poster_url} alt="poster" />
-              <Link to={`/${filmId ? "films" : "series"}/${film.id}`}>
+          {recommendations.map((item) => (
+            <Recommendation key={item.id}>
+              <img src={item.poster_url} alt="poster" />
+              <Link to={`/${filmId ? "films" : "series"}/${item.id}`}>
                 <RecommendationInfo>
-                  <span>{film.title}</span>
+                  <button>{item.vote_average.toFixed(1)}</button>
+                  <span>
+                    <FiMoreHorizontal size={24} />
+                  </span>
                 </RecommendationInfo>
               </Link>
             </Recommendation>

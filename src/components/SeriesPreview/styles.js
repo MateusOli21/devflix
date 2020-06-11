@@ -101,9 +101,22 @@ export const SerieInfo = styled.div`
   span {
     position: absolute;
     bottom: 0;
+    right: 0;
     padding: 1rem;
-    width: 70%;
     font-size: 0.85rem;
     color: ${theme.white};
+  }
+
+  button {
+    position: absolute;
+    bottom: 1.2rem;
+    left: 1.1rem;
+    padding: 9px 9px;
+    border: 2px solid ${theme.secondary};
+    border-radius: 50%;
+    font-size: 0.65rem;
+    background: transparent;
+    color: ${theme.white};
+    font-weight: 700;
   }
 `;
