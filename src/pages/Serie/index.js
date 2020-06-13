@@ -45,7 +45,7 @@ function SeriePage() {
     <Container>
       <Serie bgImage={serie.backdrop_url}>
         <BackPage>
-          <Link to="/">
+          <Link to="/dashboard">
             <FiArrowLeft size={18} />
           </Link>
         </BackPage>

@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { darken } from "polished";
+
 import { theme } from "../../styles/global";
 
 export const Container = styled.div`
@@ -22,6 +24,17 @@ export const Container = styled.div`
 
       &:hover {
         color: ${theme.secondary};
+      }
+    }
+
+    span {
+      padding: 6px 12px;
+      border-radius: 5px;
+      background: ${theme.secondary};
+
+      &:hover {
+        color: ${theme.white};
+        background: ${darken(0.05, theme.secondary)};
       }
     }
   }

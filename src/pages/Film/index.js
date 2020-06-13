@@ -42,7 +42,7 @@ function Film() {
     <Container>
       <Movie bgImage={film.backdrop_url}>
         <BackPage>
-          <Link to="/">
+          <Link to="/dashboard">
             <FiArrowLeft size={18} />
           </Link>
         </BackPage>
