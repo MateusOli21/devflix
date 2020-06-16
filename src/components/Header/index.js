@@ -9,12 +9,22 @@ export default function Header() {
       <h1>DEVFLIX</h1>
 
       <nav>
-        <Link to="/dashboard">Início</Link>
-        <Link to="/films">Filmes</Link>
-        <Link to="/series">Séries</Link>
-        <Link to="/">
-          <span>Sair</span>
-        </Link>
+        {document.location.pathname === "/" ? (
+          <>
+            <Link to="/dashboard">
+              <span>Entrar</span>
+            </Link>
+          </>
+        ) : (
+          <>
+            <Link to="/dashboard">Início</Link>
+            <Link to="/films">Filmes</Link>
+            <Link to="/series">Séries</Link>
+            <Link to="/">
+              <span>Sair</span>
+            </Link>
+          </>
+        )}
       </nav>
     </Container>
   );
