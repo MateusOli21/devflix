@@ -4,7 +4,7 @@ import { FiLogIn } from "react-icons/fi";
 
 import TrendingCarousel from "../../components/TrendingCarousel";
 
-import { Container, Slogan, ContentPreview, TabNavigation } from "./styles";
+import { Container, Slogan } from "./styles";
 
 function Home() {
   return (
@@ -21,10 +21,7 @@ function Home() {
         </Link>
       </Slogan>
 
-      <ContentPreview>
-        <h1>Encontre os melhores filmes e séries</h1>
-        <TrendingCarousel />
-      </ContentPreview>
+      <TrendingCarousel />
     </Container>
   );
 }

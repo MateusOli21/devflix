@@ -8,7 +8,6 @@ function TrendingCarousel() {
   const { trendings } = useContext(Context);
 
   const trendingList = trendings.slice(0, 5);
-  console.log(trendingList);
   var baseNumber = 0;
 
   return (

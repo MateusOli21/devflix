@@ -4,16 +4,19 @@ import { theme } from "../../styles/global";
 
 export const Container = styled.div`
   width: 100%;
-  padding: 0 6px;
+  padding: 0 2.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const Slogan = styled.div`
-  height: 400px;
+  width: 80%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  text-align: center;
 
   h1 {
     font-size: 1.5rem;
@@ -50,11 +53,11 @@ export const Slogan = styled.div`
     strong {
       flex: 1;
       text-align: center;
-      color: #fff;
+      color: ${theme.white};
     }
 
     svg {
-      color: #fff;
+      color: ${theme.white};
       width: 20px;
       height: 20px;
     }
@@ -64,7 +67,10 @@ export const Slogan = styled.div`
     height: 520px;
 
     h1 {
-      font-size: 2.75rem;
+      font-size: 2.5rem;
+    }
+    h2 {
+      margin-bottom: 1.5rem;
     }
   }
 `;
@@ -79,7 +85,7 @@ export const ContentPreview = styled.div`
   }
 
   @media (min-width: 620px) {
-    margin: 2rem 0 3.5rem;
+    margin: 2rem 0 6rem;
     text-align: center;
 
     h1 {
@@ -89,4 +95,7 @@ export const ContentPreview = styled.div`
   }
 `;
 
-export const TabNavigation = styled.div``;
+export const TabNavigation = styled.div`
+  margin: 1rem 0 1rem;
+  padding: 0 1.75rem;
+`;

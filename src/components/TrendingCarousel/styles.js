@@ -9,7 +9,7 @@ export const Container = styled.div`
 export const Row = styled.div`
   height: 380px;
   position: relative;
-  perspective: 1800px;
+  perspective: 1000px;
   transform-style: preserve-3d;
   display: flex;
   align-items: center;
@@ -49,12 +49,12 @@ export const Row = styled.div`
 
   @media (min-width: 620px) {
     label {
-      max-width: 680px;
-      max-height: 720px;
+      max-width: 500px;
+      max-height: 280px;
 
       img {
         width: 100%;
-        max-width: 680px;
+        max-width: 500px;
         border-radius: 5px;
       }
 
